@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 자유 회화 도우미</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>영어 자유 회화 도우미</h1>
+        </header>
+        <div class="chat-window" id="chatWindow">
+            <!-- 채팅 메시지가 여기에 표시됩니다 -->
+        </div>
+        <form id="chatForm" class="chat-form">
+            <input type="text" id="messageInput" placeholder="메시지를 입력하세요..." required>
+            <button type="submit">전송</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        setupChat('/run_conversation_assistant');
+    </script>
+</body>
+</html>
